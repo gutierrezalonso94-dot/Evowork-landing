@@ -71,6 +71,15 @@
       }
     }
 
+    @keyframes countUp {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     .feature-icon {
       width: 60px;
       height: 60px;
@@ -218,6 +227,43 @@
       opacity: 1;
     }
 
+    /* TESTIMONIO CARDS */
+    .testimonial-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      padding: 24px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(59, 130, 246, 0.5);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* COUNTER ANIMATION */
+    .counter {
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
     @media (max-width: 768px) {
       body {
         padding-bottom: 80px;
@@ -246,11 +292,12 @@
       <div class="hidden md:flex gap-8">
         <a href="#para-clientes" class="text-gray-300 hover:text-white transition">Para Clientes</a>
         <a href="#para-proveedores" class="text-gray-300 hover:text-white transition">Para Proveedores</a>
+        <a href="#testimonios" class="text-gray-300 hover:text-white transition">Testimonios</a>
         <a href="#faq" class="text-gray-300 hover:text-white transition">FAQ</a>
       </div>
-      <button class="bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-2 rounded-xl font-semibold text-sm gradient-btn">
+      <a href="" target="_blank" class="bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-2 rounded-xl font-semibold text-sm gradient-btn">
         Descargar App
-      </button>
+      </a>
     </div>
   </nav>
 
@@ -272,7 +319,7 @@
       <!-- URGENCIA -->
       <div class="bg-gradient-to-r from-blue-500/10 to-purple-600/10 rounded-2xl p-6 mb-8 border border-blue-500/20">
         <p class="text-lg text-blue-300 mb-2">⏰ Beta limitada - Solo 1,000 más de acceso</p>
-        <p class="text-sm text-gray-400">Más de <span class="font-bold text-blue-400">5,000 users</span> ya confían en Evowork</p>
+        <p class="text-sm text-gray-400">Más de <span class="font-bold text-blue-400" id="userCount">5,000</span> users ya confían en Evowork</p>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -297,19 +344,19 @@
       
       <div class="grid md:grid-cols-4 gap-8">
         <div class="card p-8 rounded-2xl text-center">
-          <p class="text-4xl font-bold gradient-text mb-2">5K+</p>
+          <p class="counter" id="counter1">0</p>
           <p class="text-gray-400">Beta testers activos</p>
         </div>
         <div class="card p-8 rounded-2xl text-center">
-          <p class="text-4xl font-bold gradient-text mb-2">$500K</p>
+          <p class="counter" id="counter2">0</p>
           <p class="text-gray-400">Pagados a proveedores</p>
         </div>
         <div class="card p-8 rounded-2xl text-center">
-          <p class="text-4xl font-bold gradient-text mb-2">98%</p>
-          <p class="text-gray-400">Satisfacción</p>
+          <p class="counter" id="counter3">0</p>
+          <p class="text-gray-400">% Satisfacción</p>
         </div>
         <div class="card p-8 rounded-2xl text-center">
-          <p class="text-4xl font-bold gradient-text mb-2">10+</p>
+          <p class="counter" id="counter4">0</p>
           <p class="text-gray-400">Estados cubiertos</p>
         </div>
       </div>
@@ -334,7 +381,7 @@
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
       <div class="card p-8 rounded-2xl fade-in">
-        <div class="feature-icon">��</div>
+        <div class="feature-icon">🔒</div>
         <h3 class="text-xl font-semibold mb-3">Pagos protegidos</h3>
         <p class="text-gray-400">El dinero se mantiene seguro hasta que el trabajo se completa. Sin riesgos.</p>
       </div>
@@ -351,6 +398,50 @@
         <p class="text-gray-400">Contratación, pagos y facturación dentro de la app.</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- CÓMO EMPEZAR -->
+  <section class="py-20 px-6 bg-gradient-to-b from-black to-gray-950">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Empieza en 3 pasos</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Paso 1 -->
+        <div class="relative">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mb-4 text-2xl">
+              📱
+            </div>
+            <h3 class="text-xl font-bold mb-3">1. Descarga la app</h3>
+            <p class="text-gray-400">Disponible en iOS y Android</p>
+          </div>
+          <div class="hidden md:block absolute top-8 right-0 w-full h-1 bg-gradient-to-r from-blue-500/50 to-transparent"></div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="relative">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mb-4 text-2xl">
+              ✍️
+            </div>
+            <h3 class="text-xl font-bold mb-3">2. Completa tu perfil</h3>
+            <p class="text-gray-400">Verifica identidad en segundos</p>
+          </div>
+          <div class="hidden md:block absolute top-8 right-0 w-full h-1 bg-gradient-to-r from-blue-500/50 to-transparent"></div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="relative">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mb-4 text-2xl">
+              🚀
+            </div>
+            <h3 class="text-xl font-bold mb-3">3. ¡Comienza a ganar!</h3>
+            <p class="text-gray-400">O encuentra profesionales al instante</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -680,8 +771,74 @@
     </div>
   </section>
 
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Lo que dicen nuestros usuarios</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="avatar">JG</div>
+            <div>
+              <p class="font-semibold">Juan García</p>
+              <p class="text-sm text-gray-400">Plomero, CDMX</p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-4">"Gané $2,500 en mi primer mes. Los clientes son reales y los pagos seguros. Evowork cambió mi vida."</p>
+          <div class="flex gap-1">
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="avatar">MR</div>
+            <div>
+              <p class="font-semibold">María Rodríguez</p>
+              <p class="text-sm text-gray-400">Cliente, Guadalajara</p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-4">"Encontré un electricista de confianza en minutos. El proceso fue fácil y transparente. Muy recomendado."</p>
+          <div class="flex gap-1">
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="avatar">CR</div>
+            <div>
+              <p class="font-semibold">Carlos López</p>
+              <p class="text-sm text-gray-400">Carpintero, Monterrey</p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-4">"Sin comisiones en beta, pagos rápidos y mucho trabajo disponible. Esto es lo que esperaba."</p>
+          <div class="flex gap-1">
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+            <span class="text-yellow-400">⭐</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SEGURIDAD -->
-  <section class="py-20 px-6">
+  <section class="py-20 px-6 bg-gradient-to-b from-black to-gray-950">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold text-center mb-12">Tu dinero está seguro</h2>
 
@@ -851,9 +1008,4 @@
   <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="whatsapp-button">
     <div class="whatsapp-tooltip">¿Necesitas ayuda?</div>
     <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.6915026,14.4744427 C17.4788374,14.3953847 16.8951724,14.0974384 16.6844489,14.0159621 C16.4694621,13.9365157 16.315502,13.9920524 16.1157835,14.1911049 C15.9426054,14.3619328 15.4693401,14.9303899 15.3018233,15.1436818 C15.1365046,15.3542495 14.9741057,15.3858319 14.7587634,15.2875843 C14.5465476,15.1918012 13.9270597,14.9818659 13.1856395,14.2956085 C12.6183168,13.7846369 12.2615989,13.1559697 12.1010559,12.9433956 C11.9405129,12.7308216 12.0904451,12.5809675 12.1906758,12.4833318 C12.2840893,12.3954693 12.3970555,12.2596197 12.4962962,12.0999369 C12.5955368,11.9402542 12.6330635,11.8187893 12.7509556,11.6057666 C12.8688477,11.392544 12.8314209,11.2336467 12.7545368,11.1368343 C12.6831558,11.0502864 12.2955852,10.193696 12.1155521,9.80290677 C11.9463093,9.43200395 11.7729036,9.48532158 11.6424485,9.47892181 C11.5249195,9.47368814 11.4069566,9.4720894 11.2879695,9.4720894 C11.1362948,9.4720894 10.8934916,9.53192926 10.6788816,9.74689306 C10.4651717,9.96345877 9.90369171,10.5394179 9.90369171,11.3955618 C9.90369171,12.2493093 10.6954405,13.0759407 10.7914067,13.1946183 C10.8903696,13.3148556 12.0297151,15.3283776 13.8987206,16.1367428 C14.5191629,16.4144944 15.0064812,16.5826293 15.3779836,16.6970055 C15.9972928,16.8830353 16.5665281,16.8543936 17.0227485,16.7775768 C17.533987,16.6900699 18.584585,16.1229636 18.7639705,15.5061918 C18.9433561,14.8894201 18.9433561,14.3705068 18.8697026,14.2505643 C18.7961491,14.1306218 18.6513778,14.0701814 18.437455,14.0359939 Z M12.0316504,3.5 C7.49219511,3.5 3.77419821,7.2180169 3.77419821,11.7574621 C3.77419821,13.6704577 4.37362146,15.4460531 5.43348029,16.9128116 L4.9596745,18.7271993 L6.8762816,17.8360604 C8.31944558,18.7347506 10.0504889,19.2499242 11.9685416,19.2499242 C16.5079485,19.2499242 20.2259455,15.5319073 20.2259455,11.0 C20.2259455,6.46040987 16.5079485,3.5 12.0316504,3.5 Z"/>
-    </svg>
-  </a>
-
-</body>
-</html>
+      <path d="M17.6915026,14.4744427 C17.4788374,14.3953847 16.8951724,14.0974384 16.6844489,14.0159621 C16.4694621,13.9365157 16.315502,13.9920524 16.1157835,14.1911049 C15.9426054,14.3619328 15.4693401,14.9303899 15.3018233,15.1436818 C15.1365046,15.3542495 14.9741057,15.3858319 14.7587634,15.2875843 C14.5465476,15.1918012 13.9270597,14.9818659 13.1856395,14.2956085 C12.6183168,13.7846369 12.2615989,13.1559697 12.1010559,12.9433956 C11.9405129,12.7308216 12.0904451,12.5809675 12.1906758,12.4833318 C12.2840893,12.3954693 12.3970555,12.2596197 12.4962962,12.0999369 C12.5955368,11.9402542 12.6330635,11.8187893 12.7509556,11.6057666 C12.8688477,11.392544 12.8314209,11.2336467 12.7545368,11.1368343 C12.6831558,11.0502864 12.2955852,10.193696 12.1155521,9.80290677 C11.9463093,9.43200395 11.7729036,9.48532158 11.6424485,9.47892181 C11.5249195,9.47368814 11.4069566,9.4720894 11.2879695,9.4720894 C11.1362948,9.4720894 10.8934916,9.53192926 10.6788816,9.74689306 C10.4651717,9.96345877 9.90369171,10.5394179 9.90369171,11.3955618 C9.90369171,12.2493093 10.6954405,13.0759407 10.7914067,13.1946183 C10.8903696,13.3148556 12.0297151,15.3283776 13.8987206,16.1367428 C14.5191629,16.4144944 15.0064812,16.5826293 15.3779836,16.6970055 C15.9972928,16.8830353 16.5665281,16.8543936 17.0227485,16.7775768 C17.533987,16.6900699 18.584585,16.1229636 18.7639705,15.5061918 C18.9433561,14.8894201 18.9433561,14.3705068 18.8697026,14.2505643 C18.7961
