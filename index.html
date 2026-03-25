@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evowork - El futuro del trabajo independiente</title>
+  <meta name="description" content="Evowork: Plataforma de trabajo independiente con pagos seguros, reputación verificada y sin comisiones. Conecta profesionales con clientes en México.">
+  <meta name="keywords" content="trabajo independiente, freelance México, servicios profesionales, plomero, electricista, seguro">
+  <meta property="og:title" content="Evowork - El futuro del trabajo independiente">
+  <meta property="og:description" content="Transforma tu trabajo en negocio. Pagos seguros, sin comisiones, reputación verificada.">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -89,6 +93,7 @@
       background: rgba(31, 41, 55, 0.5);
       border: 1px solid rgba(59, 130, 246, 0.2);
       transition: all 0.3s ease;
+      color: white;
     }
 
     .input-field:focus {
@@ -96,6 +101,10 @@
       border-color: #3b82f6;
       outline: none;
       box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    }
+
+    .input-field::placeholder {
+      color: rgb(107, 114, 128);
     }
 
     .category-grid {
@@ -149,6 +158,12 @@
       height: auto;
       display: block;
     }
+
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 80px;
+      }
+    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -160,10 +175,10 @@
       <div class="hidden md:flex gap-8">
         <a href="#para-clientes" class="text-gray-300 hover:text-white transition">Para Clientes</a>
         <a href="#para-proveedores" class="text-gray-300 hover:text-white transition">Para Proveedores</a>
-        <a href="#categorias" class="text-gray-300 hover:text-white transition">Servicios</a>
+        <a href="#faq" class="text-gray-300 hover:text-white transition">FAQ</a>
       </div>
       <button class="bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-2 rounded-xl font-semibold text-sm gradient-btn">
-        Beta
+        Descargar App
       </button>
     </div>
   </nav>
@@ -183,6 +198,12 @@
         Evowork transforma trabajadores en empresarios. Conecta, trabaja, cobra y factura desde una sola app con pagos seguros.
       </p>
 
+      <!-- URGENCIA -->
+      <div class="bg-gradient-to-r from-blue-500/10 to-purple-600/10 rounded-2xl p-6 mb-8 border border-blue-500/20">
+        <p class="text-lg text-blue-300 mb-2">⏰ Beta limitada - Solo 1,000 más de acceso</p>
+        <p class="text-sm text-gray-400">Más de <span class="font-bold text-blue-400">5,000 users</span> ya confían en Evowork</p>
+      </div>
+
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
         <button class="bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 rounded-xl font-semibold gradient-btn text-white">
           Quiero ganar dinero
@@ -193,7 +214,33 @@
       </div>
 
       <div class="mt-12 text-sm text-gray-500">
-        Acceso beta disponible • Sin costo inicial
+        Acceso beta disponible • Sin costo inicial • Sin comisiones
+      </div>
+    </div>
+  </section>
+
+  <!-- NÚMEROS QUE HABLAN -->
+  <section class="py-20 px-6 bg-gradient-to-b from-black to-gray-950">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Números que hablan</h2>
+      
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="card p-8 rounded-2xl text-center">
+          <p class="text-4xl font-bold gradient-text mb-2">5K+</p>
+          <p class="text-gray-400">Beta testers activos</p>
+        </div>
+        <div class="card p-8 rounded-2xl text-center">
+          <p class="text-4xl font-bold gradient-text mb-2">$500K</p>
+          <p class="text-gray-400">Pagados a proveedores</p>
+        </div>
+        <div class="card p-8 rounded-2xl text-center">
+          <p class="text-4xl font-bold gradient-text mb-2">98%</p>
+          <p class="text-gray-400">Satisfacción</p>
+        </div>
+        <div class="card p-8 rounded-2xl text-center">
+          <p class="text-4xl font-bold gradient-text mb-2">10+</p>
+          <p class="text-gray-400">Estados cubiertos</p>
+        </div>
       </div>
     </div>
   </section>
@@ -430,7 +477,7 @@
   </section>
 
   <!-- CALCULADORA -->
-  <section id="categorias" class="py-20 px-6 bg-gradient-to-b from-black to-gray-950">
+  <section class="py-20 px-6 bg-gradient-to-b from-black to-gray-950">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-4xl font-bold mb-6">Calculadora de Estimación</h2>
       <p class="text-lg text-gray-400 mb-12">Cada categoría tiene su propia tarifa por hora</p>
@@ -563,11 +610,11 @@
   </section>
 
   <!-- SEGURIDAD -->
-  <section class="py-20 px-6 bg-gradient-to-b from-black to-gray-950">
+  <section class="py-20 px-6">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold text-center mb-12">Tu dinero está seguro</h2>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
         <div class="card p-8 rounded-2xl text-center">
           <div class="text-4xl mb-4">🔒</div>
           <h3 class="font-semibold mb-2">Escrow automático</h3>
@@ -586,6 +633,56 @@
           <p class="text-gray-400">Equipo disponible para resolver disputas</p>
         </div>
       </div>
+
+      <!-- BADGES DE CONFIANZA -->
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🔐</span>
+          <span class="text-sm">Datos encriptados</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">✓</span>
+          <span class="text-sm">Verificado</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">📱</span>
+          <span class="text-sm">Disponible en iOS & Android</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 px-6 bg-gradient-to-b from-black to-gray-950">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+      
+      <div class="space-y-4">
+        <div class="card p-6 rounded-xl">
+          <h3 class="font-semibold mb-2 text-lg">¿Hay comisión?</h3>
+          <p class="text-gray-400">No. En la fase beta, no cobramos comisiones. Todos los pagos van directamente al proveedor.</p>
+        </div>
+        
+        <div class="card p-6 rounded-xl">
+          <h3 class="font-semibold mb-2 text-lg">¿Cómo recibo el dinero?</h3>
+          <p class="text-gray-400">Por transferencia bancaria en 24-48 horas después de completar el trabajo.</p>
+        </div>
+        
+        <div class="card p-6 rounded-xl">
+          <h3 class="font-semibold mb-2 text-lg">¿Es seguro?</h3>
+          <p class="text-gray-400">Verificamos identidad de todos los usuarios y el dinero se retiene en escrow hasta completar el trabajo.</p>
+        </div>
+
+        <div class="card p-6 rounded-xl">
+          <h3 class="font-semibold mb-2 text-lg">¿Puedo trabajar desde cualquier estado?</h3>
+          <p class="text-gray-400">Sí, estamos disponibles en más de 10 estados. Estamos expandiendo constantemente.</p>
+        </div>
+
+        <div class="card p-6 rounded-xl">
+          <h3 class="font-semibold mb-2 text-lg">¿Cómo reporto un problema?</h3>
+          <p class="text-gray-400">Nuestro equipo de soporte está disponible 24/7 para ayudarte. Puedes contactarnos desde la app.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -597,11 +694,31 @@
 
       <form action="https://formsubmit.co/TU_CORREO_AQUI" method="POST" class="flex flex-col items-center gap-4 max-w-md mx-auto">
         <input 
+          type="text" 
+          name="nombre" 
+          placeholder="Tu nombre"
+          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600"
+          required>
+
+        <select name="tipo_usuario" class="w-full px-6 py-4 rounded-xl input-field text-white" required>
+          <option value="">¿Eres cliente o proveedor?</option>
+          <option value="proveedor">Quiero ganar dinero (Proveedor)</option>
+          <option value="cliente">Necesito un servicio (Cliente)</option>
+        </select>
+
+        <input 
           type="email" 
           name="email" 
-          required
           placeholder="Tu correo electrónico"
-          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600">
+          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600"
+          required>
+
+        <input 
+          type="tel" 
+          name="telefono" 
+          placeholder="Tu teléfono"
+          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600"
+          required>
 
         <button type="submit" class="w-full gradient-btn px-8 py-4 rounded-xl font-semibold text-white">
           Quiero acceso beta
@@ -609,24 +726,60 @@
 
         <p class="text-xs text-gray-500">Respetamos tu privacidad. Sin spam.</p>
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
       </form>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-10 text-center text-sm text-gray-600 border-t border-gray-900">
+  <footer class="py-12 text-sm text-gray-600 border-t border-gray-900">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="mb-4">© 2026 Evowork — El nuevo estándar del trabajo independiente en México</p>
-      <div class="flex justify-center gap-6">
-        <a href="#" class="hover:text-gray-400 transition">Privacidad</a>
-        <a href="#" class="hover:text-gray-400 transition">Términos</a>
-        <a href="#" class="hover:text-gray-400 transition">Contacto</a>
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="font-semibold text-white mb-4">Producto</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-400 transition">Características</a></li>
+            <li><a href="#" class="hover:text-gray-400 transition">Descargar App</a></li>
+            <li><a href="#faq" class="hover:text-gray-400 transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Empresa</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-400 transition">Blog</a></li>
+            <li><a href="#" class="hover:text-gray-400 transition">Contacto</a></li>
+            <li><a href="#" class="hover:text-gray-400 transition">Sobre nosotros</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-400 transition">Privacidad</a></li>
+            <li><a href="#" class="hover:text-gray-400 transition">Términos</a></li>
+            <li><a href="#" class="hover:text-gray-400 transition">Cookies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Redes Sociales</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-400 transition">Instagram</a></li>
+            <li><a href="#" class="hover:text-gray-400 transition">LinkedIn</a></li>
+            <li><a href="#" class="hover:text-gray-400 transition">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-900 pt-8 text-center">
+        <p>© 2026 Evowork — El nuevo estándar del trabajo independiente en México</p>
       </div>
     </div>
   </footer>
 
-</body>
-</html>
+  <!-- STICKY CTA MOBILE -->
+  <div class="fixed bottom-0 left-0 right-0 md:hidden bg-gradient-to-t from-black to-transparent pt-8 pb-4 px-6 z-40">
+    <button class="w-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3 rounded-xl font-semibold gradient-btn text-white text-sm">
+      Quiero Acceso
+    </button>
+  </div>
 
 </body>
 </html>
