@@ -159,9 +159,80 @@
       display: block;
     }
 
+    /* WHATSAPP FLOATING BUTTON */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      animation: bounce 2s infinite;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-button svg {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .whatsapp-tooltip {
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      background: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-button:hover .whatsapp-tooltip {
+      opacity: 1;
+    }
+
     @media (max-width: 768px) {
       body {
         padding-bottom: 80px;
+      }
+
+      .whatsapp-button {
+        bottom: 100px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+      }
+
+      .whatsapp-button svg {
+        width: 28px;
+        height: 28px;
       }
     }
   </style>
@@ -263,7 +334,7 @@
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
       <div class="card p-8 rounded-2xl fade-in">
-        <div class="feature-icon">🔒</div>
+        <div class="feature-icon">��</div>
         <h3 class="text-xl font-semibold mb-3">Pagos protegidos</h3>
         <p class="text-gray-400">El dinero se mantiene seguro hasta que el trabajo se completa. Sin riesgos.</p>
       </div>
@@ -680,7 +751,7 @@
 
         <div class="card p-6 rounded-xl">
           <h3 class="font-semibold mb-2 text-lg">¿Cómo reporto un problema?</h3>
-          <p class="text-gray-400">Nuestro equipo de soporte está disponible 24/7 para ayudarte. Puedes contactarnos desde la app.</p>
+          <p class="text-gray-400">Nuestro equipo de soporte está disponible 24/7 para ayudarte. Puedes contactarnos desde la app o por WhatsApp.</p>
         </div>
       </div>
     </div>
@@ -692,15 +763,14 @@
       <h2 class="text-4xl font-bold mb-4">Obtén acceso anticipado</h2>
       <p class="mb-8 text-lg text-gray-400">Sé de los primeros en probar Evowork en México</p>
 
-      <form action="https://formsubmit.co/TU_CORREO_AQUI" method="POST" class="flex flex-col items-center gap-4 max-w-md mx-auto">
+      <form action="" method="POST" class="flex flex-col items-center gap-4 max-w-md mx-auto">
         <input 
           type="text" 
           name="nombre" 
           placeholder="Tu nombre"
-          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600"
-          required>
+          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600">
 
-        <select name="tipo_usuario" class="w-full px-6 py-4 rounded-xl input-field text-white" required>
+        <select name="tipo_usuario" class="w-full px-6 py-4 rounded-xl input-field text-white">
           <option value="">¿Eres cliente o proveedor?</option>
           <option value="proveedor">Quiero ganar dinero (Proveedor)</option>
           <option value="cliente">Necesito un servicio (Cliente)</option>
@@ -710,23 +780,19 @@
           type="email" 
           name="email" 
           placeholder="Tu correo electrónico"
-          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600"
-          required>
+          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600">
 
         <input 
           type="tel" 
           name="telefono" 
           placeholder="Tu teléfono"
-          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600"
-          required>
+          class="w-full px-6 py-4 rounded-xl input-field text-white placeholder-gray-600">
 
         <button type="submit" class="w-full gradient-btn px-8 py-4 rounded-xl font-semibold text-white">
           Quiero acceso beta
         </button>
 
         <p class="text-xs text-gray-500">Respetamos tu privacidad. Sin spam.</p>
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
       </form>
     </div>
   </section>
@@ -780,6 +846,14 @@
       Quiero Acceso
     </button>
   </div>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="whatsapp-button">
+    <div class="whatsapp-tooltip">¿Necesitas ayuda?</div>
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.6915026,14.4744427 C17.4788374,14.3953847 16.8951724,14.0974384 16.6844489,14.0159621 C16.4694621,13.9365157 16.315502,13.9920524 16.1157835,14.1911049 C15.9426054,14.3619328 15.4693401,14.9303899 15.3018233,15.1436818 C15.1365046,15.3542495 14.9741057,15.3858319 14.7587634,15.2875843 C14.5465476,15.1918012 13.9270597,14.9818659 13.1856395,14.2956085 C12.6183168,13.7846369 12.2615989,13.1559697 12.1010559,12.9433956 C11.9405129,12.7308216 12.0904451,12.5809675 12.1906758,12.4833318 C12.2840893,12.3954693 12.3970555,12.2596197 12.4962962,12.0999369 C12.5955368,11.9402542 12.6330635,11.8187893 12.7509556,11.6057666 C12.8688477,11.392544 12.8314209,11.2336467 12.7545368,11.1368343 C12.6831558,11.0502864 12.2955852,10.193696 12.1155521,9.80290677 C11.9463093,9.43200395 11.7729036,9.48532158 11.6424485,9.47892181 C11.5249195,9.47368814 11.4069566,9.4720894 11.2879695,9.4720894 C11.1362948,9.4720894 10.8934916,9.53192926 10.6788816,9.74689306 C10.4651717,9.96345877 9.90369171,10.5394179 9.90369171,11.3955618 C9.90369171,12.2493093 10.6954405,13.0759407 10.7914067,13.1946183 C10.8903696,13.3148556 12.0297151,15.3283776 13.8987206,16.1367428 C14.5191629,16.4144944 15.0064812,16.5826293 15.3779836,16.6970055 C15.9972928,16.8830353 16.5665281,16.8543936 17.0227485,16.7775768 C17.533987,16.6900699 18.584585,16.1229636 18.7639705,15.5061918 C18.9433561,14.8894201 18.9433561,14.3705068 18.8697026,14.2505643 C18.7961491,14.1306218 18.6513778,14.0701814 18.437455,14.0359939 Z M12.0316504,3.5 C7.49219511,3.5 3.77419821,7.2180169 3.77419821,11.7574621 C3.77419821,13.6704577 4.37362146,15.4460531 5.43348029,16.9128116 L4.9596745,18.7271993 L6.8762816,17.8360604 C8.31944558,18.7347506 10.0504889,19.2499242 11.9685416,19.2499242 C16.5079485,19.2499242 20.2259455,15.5319073 20.2259455,11.0 C20.2259455,6.46040987 16.5079485,3.5 12.0316504,3.5 Z"/>
+    </svg>
+  </a>
 
 </body>
 </html>
