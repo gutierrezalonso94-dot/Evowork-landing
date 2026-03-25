@@ -1,123 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evowork Beta</title>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6f9;
-  color: #1a1a1a;
-}
-header {
-  background: #0f2b46;
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-header h1 {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-header p {
-  font-size: 18px;
-  max-width: 600px;
-  margin: auto;
-}
-.button {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-  background: #2ec4b6;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-}
-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-.section-dark {
-  background: white;
-}
-.section-light {
-  background: #eef2f7;
-}
-h2 {
-  margin-bottom: 20px;
-}
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-}
-.feature {
-  max-width: 250px;
-}
-footer {
-  background: #0f2b46;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-}
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 28px;
-  }
-  .features {
-    flex-direction: column;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evowork - El futuro del trabajo independiente</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-black text-white">
 
-<body>
+  <!-- HERO -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <img src="logo.png" alt="Evowork" class="w-64 mb-8">
 
-<header>
-<h1>Evowork</h1>
-<p>Encuentra profesionales de confianza en tu ciudad. Solicita servicios, recibe atención rápida y mantén el control en todo momento.</p>
-<a href="#" class="button">Únete a la Beta</a>
-</header>
+    <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+      El futuro del trabajo empieza contigo
+    </h1>
 
-<section class="section-dark">
-<h2>¿Cómo funciona?</h2>
-<div class="features">
-<div class="feature">
-<h3>1️⃣ Publica</h3>
-<p>Describe el servicio que necesitas en segundos.</p>
-</div>
-<div class="feature">
-<h3>2️⃣ Conecta</h3>
-<p>Un profesional acepta tu solicitud.</p>
-</div>
-<div class="feature">
-<h3>3️⃣ Supervisa</h3>
-<p>Mantén el control y finaliza con seguridad.</p>
-</div>
-</div>
-</section>
+    <p class="text-xl text-gray-300 max-w-2xl mb-8">
+      Evowork transforma trabajadores en empresarios. Conecta, trabaja, cobra y factura desde una sola app con pagos seguros.
+    </p>
 
-<section class="section-light">
-<h2>Para proveedores</h2>
-<p>Recibe solicitudes en tu ciudad y aumenta tus ingresos ofreciendo tus servicios.</p>
-<a href="#" class="button">Quiero ser proveedor</a>
-</section>
+    <div class="flex gap-4">
+      <button class="bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-3 rounded-2xl font-semibold">
+        Quiero ganar dinero
+      </button>
+      <button class="border border-gray-600 px-6 py-3 rounded-2xl">
+        Necesito un servicio
+      </button>
+    </div>
+  </section>
 
-<section class="section-dark">
-<h2>Seguridad y Control</h2>
-<p>Supervisión activa, historial transparente y soporte directo en versión Beta controlada.</p>
-</section>
+  <!-- PROBLEMA -->
+  <section class="py-20 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">México tiene talento… pero no un sistema</h2>
+    <p class="max-w-3xl mx-auto text-gray-400">
+      Millones de personas saben trabajar, pero no tienen acceso a clientes, pagos seguros ni herramientas para crecer. 
+      Del otro lado, clientes no confían en desconocidos.
+    </p>
+  </section>
 
-<footer>
-<p>Versión Beta – Operación en prueba controlada</p>
-<p>Contacto: soporte.evowork@gmail.com</p>
-</footer>
+  <!-- SOLUCION -->
+  <section class="py-20 px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Evowork lo resuelve</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <div class="p-6 bg-gray-900 rounded-2xl">
+        <h3 class="text-xl font-semibold mb-2">Pagos protegidos</h3>
+        <p class="text-gray-400">El dinero se mantiene seguro hasta que el trabajo se completa.</p>
+      </div>
+
+      <div class="p-6 bg-gray-900 rounded-2xl">
+        <h3 class="text-xl font-semibold mb-2">Reputación real</h3>
+        <p class="text-gray-400">Historial, calificaciones y evidencia del trabajo realizado.</p>
+      </div>
+
+      <div class="p-6 bg-gray-900 rounded-2xl">
+        <h3 class="text-xl font-semibold mb-2">Todo en uno</h3>
+        <p class="text-gray-400">Contratación, pagos y facturación dentro de la app.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PARA PROVEEDORES -->
+  <section class="py-20 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Para quienes quieren ganar dinero</h2>
+    <p class="max-w-2xl mx-auto text-gray-400 mb-10">
+      Si sabes hacer algo, puedes monetizarlo. Evowork te da clientes, seguridad y herramientas para escalar.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <div class="p-6 bg-gray-900 rounded-2xl">
+        <h3 class="font-semibold mb-2">Consigue clientes</h3>
+        <p class="text-gray-400">Sin invertir en publicidad.</p>
+      </div>
+
+      <div class="p-6 bg-gray-900 rounded-2xl">
+        <h3 class="font-semibold mb-2">Cobra sin riesgos</h3>
+        <p class="text-gray-400">Pagos protegidos dentro de la plataforma.</p>
+      </div>
+
+      <div class="p-6 bg-gray-900 rounded-2xl">
+        <h3 class="font-semibold mb-2">Crece tu negocio</h3>
+        <p class="text-gray-400">Historial, reputación y facturación.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="py-20 px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">¿Cómo funciona?</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <div class="p-6 bg-gray-900 rounded-2xl">
+        <h3 class="text-xl font-semibold mb-2">1. Publica o acepta</h3>
+        <p class="text-gray-400">Clientes publican. Proveedores aceptan trabajos.</p>
+      </div>
+
+      <div class="p-6 bg-gray-900 rounded-2xl">
+        <h3 class="text-xl font-semibold mb-2">2. Ejecuta</h3>
+        <p class="text-gray-400">Se realiza el trabajo con seguimiento.</p>
+      </div>
+
+      <div class="p-6 bg-gray-900 rounded-2xl">
+        <h3 class="text-xl font-semibold mb-2">3. Cobra</h3>
+        <p class="text-gray-400">El pago se libera al finalizar.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IA POWER -->
+  <section class="py-20 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Impulsado por inteligencia y datos</h2>
+    <p class="max-w-3xl mx-auto text-gray-400">
+      Evowork evoluciona con cada servicio. Recomendaciones inteligentes, reputación dinámica y optimización de ingresos para cada usuario.
+    </p>
+  </section>
+
+  <!-- EMAIL CAPTURE -->
+  <section class="py-20 text-center px-6">
+    <h2 class="text-3xl font-bold mb-4">Acceso anticipado (Beta)</h2>
+    <p class="mb-6 text-gray-400">Únete y sé de los primeros en probar Evowork en México</p>
+
+    <form action="https://formsubmit.co/TU_CORREO_AQUI" method="POST" class="flex flex-col items-center gap-4 max-w-md mx-auto">
+      <input 
+        type="email" 
+        name="email" 
+        required
+        placeholder="Tu correo electrónico"
+        class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white">
+
+      <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 rounded-2xl font-semibold">
+        Quiero acceso beta
+      </button>
+
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 text-center text-sm text-gray-600">
+    © 2026 Evowork — El nuevo estándar del trabajo independiente en México
+  </footer>
 
 </body>
 </html>
